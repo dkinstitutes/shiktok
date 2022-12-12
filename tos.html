@@ -1,0 +1,331 @@
+
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Terms of Service</title>
+    <meta name="description"
+          content="TikTok Video Downloader Without watermark! Now you can download TikTok Videos without any restriction. Just paste your TikTok Video Url and download the video.">
+    <meta name="keywords"
+          content="TikTok, TikTok Downloader, TikTok Video Downloader, Download TikTok Videos, Online TikTok Video Downloader, Download TikTok Videos Without Watermark">
+    
+
+    <meta property="og:title" content="Terms of Service">
+    <meta property="og:description" content="TikTok Video Downloader Without watermark! Now you can download TikTok Videos without any restriction. Just paste your TikTok Video Url and download the video.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;600;700;900&display=swap"
+          as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://tiktok.codespikex.com/theme-assets/css/app.css?v=b2c7e22022321a2305f55bae3d6e6426">
+    
+    <script defer src="https://unpkg.com/@alpinejs/collapse@3.10.3/dist/cdn.min.js"
+            integrity="sha384-gE382HiLf7oZIQO4e8O4ursZqf9JAjQQgNCRsUyUKfWBMXOiEFm89KxNkJjycgEq"
+            crossorigin="anonymous"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"
+            integrity="sha384-WJjkwfwjSA9R8jBkDaVBHc+idGbOa+2W4uq2SOwLCHXyNktpMVINGAD2fCYbUZn6"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/toastedjs@0.0.2/dist/toasted.min.css">
+    <!-- pull the js file -->
+    <script defer src="https://unpkg.com/toastedjs@0.0.2/dist/toasted.min.js"
+            integrity="sha384-/MVO8JFl9R2K32DQkRu+OOg3layD72sHHL9HBuMtiu2XCGeIYRL+WI3YizSdB3PF"
+            crossorigin="anonymous"></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function () {
+            window.toasted = new window.Toasted({
+                theme: 'bootstrap',
+                position: 'top-center',
+                duration: 5000,
+            })
+        });
+    </script>
+
+    </head>
+<body>
+<header x-data="HeaderComponent()" class="header" aria-label="Main Header">
+    <div class="logo">
+        <a href="https://tiktok.codespikex.com/en" aria-label="TikTok Downloader">
+            <img src="https://tiktok.codespikex.com/theme-assets/images/logo.svg?v=b2c7e22022321a2305f55bae3d6e6426" alt="TikTok Downloader" aria-hidden="true" height="40" width="150"/>
+        </a>
+    </div>
+    <nav aria-label="Main Navigation" :class="{'is-open': showNav}">
+        <ul>
+            <li>
+    <a href="https://tiktok.codespikex.com/en/popular-videos" class="">Popular videos</a>
+</li>
+            <li>
+    <a href="https://tiktok.codespikex.com/en/how-to-save" class="">How to save TikTok video?</a>
+</li>
+        </ul>
+    </nav>
+    <div>
+        <div class="change-locale mi-start" x-data="ChangeLocaleComponent()" :class="{'is-open': showMenu}">
+    <button class="change-locale-toggle" aria-label="Change locale" @click="toggleMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon mi-end" aria-hidden="true">
+    <path
+        d="M21.721 12.752a9.711 9.711 0 00-.945-5.003 12.754 12.754 0 01-4.339 2.708 18.991 18.991 0 01-.214 4.772 17.165 17.165 0 005.498-2.477zM14.634 15.55a17.324 17.324 0 00.332-4.647c-.952.227-1.945.347-2.966.347-1.021 0-2.014-.12-2.966-.347a17.515 17.515 0 00.332 4.647 17.385 17.385 0 005.268 0zM9.772 17.119a18.963 18.963 0 004.456 0A17.182 17.182 0 0112 21.724a17.18 17.18 0 01-2.228-4.605zM7.777 15.23a18.87 18.87 0 01-.214-4.774 12.753 12.753 0 01-4.34-2.708 9.711 9.711 0 00-.944 5.004 17.165 17.165 0 005.498 2.477zM21.356 14.752a9.765 9.765 0 01-7.478 6.817 18.64 18.64 0 001.988-4.718 18.627 18.627 0 005.49-2.098zM2.644 14.752c1.682.971 3.53 1.688 5.49 2.099a18.64 18.64 0 001.988 4.718 9.765 9.765 0 01-7.478-6.816zM13.878 2.43a9.755 9.755 0 016.116 3.986 11.267 11.267 0 01-3.746 2.504 18.63 18.63 0 00-2.37-6.49zM12 2.276a17.152 17.152 0 012.805 7.121c-.897.23-1.837.353-2.805.353-.968 0-1.908-.122-2.805-.353A17.151 17.151 0 0112 2.276zM10.122 2.43a18.629 18.629 0 00-2.37 6.49 11.266 11.266 0 01-3.746-2.504 9.754 9.754 0 016.116-3.985z"/>
+</svg>
+        <span aria-label="Current locale">English</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="arrow mi-start" aria-hidden="true" >
+    <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" />
+</svg>
+    </button>
+    <div x-show="showMenu" x-cloak x-transition @click.outside="closeMenu()" class="change-locale-menu inset-i-end" dir="ltr">
+                    <a href="https://tiktok.codespikex.com/tos?locale=en">English</a>
+                    <a href="https://tiktok.codespikex.com/tos?locale=ar">Arabic</a>
+                    <a href="https://tiktok.codespikex.com/tos?locale=id">Bahasa Indonesia</a>
+                    <a href="https://tiktok.codespikex.com/tos?locale=de">Deutsch</a>
+                    <a href="https://tiktok.codespikex.com/tos?locale=es">Español</a>
+                    <a href="https://tiktok.codespikex.com/tos?locale=tr">Türkçe</a>
+                    <a href="https://tiktok.codespikex.com/tos?locale=fr">Français</a>
+            </div>
+</div>
+
+        <button @click="toggleNav()" class="menu-toggle mi-start" aria-label="Toggle Navigation">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="!showNav" aria-hidden="true" >
+    <path fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+</svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="showNav" x-cloak="true" aria-hidden="true" >
+    <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+</svg>
+        </button>
+    </div>
+</header>
+
+<section class="article-section" dir="ltr">
+        <div class="container">
+            <h1>Terms and Conditions</h1>
+
+            <p>Welcome to shiktok!</p>
+
+            <p>These terms and conditions outline the rules and regulations for the use of CodeSpikeX's Website, located at shiktok.com.</p>
+
+            <p>By accessing this website we assume you accept these terms and conditions. Do not continue to use shiktok if you do not agree to take all of the terms and conditions stated on this page.</p>
+
+            <p>The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements: "Client", "You" and "Your" refers to you, the person log on this website and compliant to the Company’s terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client in the most appropriate manner for the express purpose of meeting the Client’s needs in respect of provision of the Company’s stated services, in accordance with and subject to, prevailing law of Netherlands. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to same.</p>
+
+            <h2>Cookies</h2>
+
+            <p>We employ the use of cookies. By accessing shiktok, you agreed to use cookies in agreement with the CodeSpikeX's Privacy Policy. </p>
+
+            <p>Most interactive websites use cookies to let us retrieve the user’s details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.</p>
+
+            <h2>License</h2>
+
+            <p>Unless otherwise stated, CodeSpikeX and/or its licensors own the intellectual property rights for all material on shiktok. All intellectual property rights are reserved. You may access this from shiktok for your own personal use subjected to restrictions set in these terms and conditions.</p>
+
+            <p>You must not:</p>
+            <ul>
+                <li>Republish material from shiktok</li>
+                <li>Sell, rent or sub-license material from shiktok</li>
+                <li>Reproduce, duplicate or copy material from shiktok</li>
+                <li>Redistribute content from shiktok</li>
+            </ul>
+
+            <p>This Agreement shall begin on the date hereof. Our Terms and Conditions were created with the help of the <a href="https://www.termsandconditionsgenerator.com/">Free Terms and Conditions Generator</a>.</p>
+
+            <p>Parts of this website offer an opportunity for users to post and exchange opinions and information in certain areas of the website. CodeSpikeX does not filter, edit, publish or review Comments prior to their presence on the website. Comments do not reflect the views and opinions of CodeSpikeX,its agents and/or affiliates. Comments reflect the views and opinions of the person who post their views and opinions. To the extent permitted by applicable laws, CodeSpikeX shall not be liable for the Comments or for any liability, damages or expenses caused and/or suffered as a result of any use of and/or posting of and/or appearance of the Comments on this website.</p>
+
+            <p>CodeSpikeX reserves the right to monitor all Comments and to remove any Comments which can be considered inappropriate, offensive or causes breach of these Terms and Conditions.</p>
+
+            <p>You warrant and represent that:</p>
+
+            <ul>
+                <li>You are entitled to post the Comments on our website and have all necessary licenses and consents to do so;</li>
+                <li>The Comments do not invade any intellectual property right, including without limitation copyright, patent or trademark of any third party;</li>
+                <li>The Comments do not contain any defamatory, libelous, offensive, indecent or otherwise unlawful material which is an invasion of privacy</li>
+                <li>The Comments will not be used to solicit or promote business or custom or present commercial activities or unlawful activity.</li>
+            </ul>
+
+            <p>You hereby grant CodeSpikeX a non-exclusive license to use, reproduce, edit and authorize others to use, reproduce and edit any of your Comments in any and all forms, formats or media.</p>
+
+            <h2>Hyperlinking to our Content</h2>
+
+            <p>The following organizations may link to our Website without prior written approval:</p>
+
+            <ul>
+                <li>Government agencies;</li>
+                <li>Search engines;</li>
+                <li>News organizations;</li>
+                <li>Online directory distributors may link to our Website in the same manner as they hyperlink to the Websites of other listed businesses; and</li>
+                <li>System wide Accredited Businesses except soliciting non-profit organizations, charity shopping malls, and charity fundraising groups which may not hyperlink to our Web site.</li>
+            </ul>
+
+            <p>These organizations may link to our home page, to publications or to other Website information so long as the link: (a) is not in any way deceptive; (b) does not falsely imply sponsorship, endorsement or approval of the linking party and its products and/or services; and (c) fits within the context of the linking party’s site.</p>
+
+            <p>We may consider and approve other link requests from the following types of organizations:</p>
+
+            <ul>
+                <li>commonly-known consumer and/or business information sources;</li>
+                <li>dot.com community sites;</li>
+                <li>associations or other groups representing charities;</li>
+                <li>online directory distributors;</li>
+                <li>internet portals;</li>
+                <li>accounting, law and consulting firms; and</li>
+                <li>educational institutions and trade associations.</li>
+            </ul>
+
+            <p>We will approve link requests from these organizations if we decide that: (a) the link would not make us look unfavorably to ourselves or to our accredited businesses; (b) the organization does not have any negative records with us; (c) the benefit to us from the visibility of the hyperlink compensates the absence of CodeSpikeX; and (d) the link is in the context of general resource information.</p>
+
+            <p>These organizations may link to our home page so long as the link: (a) is not in any way deceptive; (b) does not falsely imply sponsorship, endorsement or approval of the linking party and its products or services; and (c) fits within the context of the linking party’s site.</p>
+
+            <p>If you are one of the organizations listed in paragraph 2 above and are interested in linking to our website, you must inform us by sending an e-mail to CodeSpikeX. Please include your name, your organization name, contact information as well as the URL of your site, a list of any URLs from which you intend to link to our Website, and a list of the URLs on our site to which you would like to link. Wait 2-3 weeks for a response.</p>
+
+            <p>Approved organizations may hyperlink to our Website as follows:</p>
+
+            <ul>
+                <li>By use of our corporate name; or</li>
+                <li>By use of the uniform resource locator being linked to; or</li>
+                <li>By use of any other description of our Website being linked to that makes sense within the context and format of content on the linking party’s site.</li>
+            </ul>
+
+            <p>No use of CodeSpikeX's logo or other artwork will be allowed for linking absent a trademark license agreement.</p>
+
+            <h2>iFrames</h2>
+
+            <p>Without prior approval and written permission, you may not create frames around our Webpages that alter in any way the visual presentation or appearance of our Website.</p>
+
+            <h2>Content Liability</h2>
+
+            <p>We shall not be hold responsible for any content that appears on your Website. You agree to protect and defend us against all claims that is rising on your Website. No link(s) should appear on any Website that may be interpreted as libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or other violation of, any third party rights.</p>
+
+            <h2>Your Privacy</h2>
+
+            <p>Please read Privacy Policy</p>
+
+            <h2>Reservation of Rights</h2>
+
+            <p>We reserve the right to request that you remove all links or any particular link to our Website. You approve to immediately remove all links to our Website upon request. We also reserve the right to amen these terms and conditions and it’s linking policy at any time. By continuously linking to our Website, you agree to be bound to and follow these linking terms and conditions.</p>
+
+            <h2>Removal of links from our website</h2>
+
+            <p>If you find any link on our Website that is offensive for any reason, you are free to contact and inform us any moment. We will consider requests to remove links but we are not obligated to or so or to respond to you directly.</p>
+
+            <p>We do not ensure that the information on this website is correct, we do not warrant its completeness or accuracy; nor do we promise to ensure that the website remains available or that the material on the website is kept up to date.</p>
+
+            <h2>Disclaimer</h2>
+
+            <p>To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our website and the use of this website. Nothing in this disclaimer will:</p>
+
+            <ul>
+                <li>limit or exclude our or your liability for death or personal injury;</li>
+                <li>limit or exclude our or your liability for fraud or fraudulent misrepresentation;</li>
+                <li>limit any of our or your liabilities in any way that is not permitted under applicable law; or</li>
+                <li>exclude any of our or your liabilities that may not be excluded under applicable law.</li>
+            </ul>
+
+            <p>The limitations and prohibitions of liability set in this Section and elsewhere in this disclaimer: (a) are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer, including liabilities arising in contract, in tort and for breach of statutory duty.</p>
+
+            <p>As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.</p>
+        </div>
+    </section>
+<footer class="footer">
+    <nav class="footer-nav" aria-label="Footer Navigation">
+        <a href="https://tiktok.codespikex.com/tos">Terms of Service</a>
+        <a href="https://tiktok.codespikex.com/privacy">Privacy Policy</a>
+        <a href="https://tiktok.codespikex.com/en/faq">FAQ</a>
+    </nav>
+    <noindex>
+        <b>This product is in no way affiliated with, authorized, maintained, sponsored or endorsed by TikTok or any of its affiliates or subsidiaries.</b>
+    </noindex>
+    <p>Copyright © 2022</p>
+</footer>
+<script>
+    window.RequestError = class extends Error {
+        constructor(response) {
+            super(response.status);
+            this.response = response;
+        }
+    }
+
+    window.handleErrors = function (e) {
+        if (!(e instanceof window.RequestError)) {
+            window.toasted.show(e.message, {
+                type: "error"
+            });
+        }
+
+        const isJson = e.response.headers.get('Content-Type') === 'application/json';
+        const promise = isJson ? e.response.json() : e.response.text();
+        promise.then(function (data) {
+            if (isJson) {
+                window.toasted.show(data.message, {
+                    type: "error"
+                });
+            } else {
+                const backdrop = document.createElement('div');
+                const bdStyles = {
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    background: 'rgba(0,0,0,0.5)',
+                    zIndex: 9999,
+                }
+
+                for (style in bdStyles)
+                    backdrop.style[style] = bdStyles[style]
+
+                const iframe = document.createElement("iframe")
+                const styles = {
+                    position: "fixed",
+                    height: '90vh',
+                    width: '90vw',
+                    top: '5vh',
+                    left: '5vw',
+                    borderRadius: '8px',
+                    backgroundColor: '#18171B',
+                    border: '0px',
+                    zIndex: 99999
+                };
+                for (style in styles)
+                    iframe.style[style] = styles[style];
+
+                backdrop.addEventListener('click', function () {
+                    backdrop.remove();
+                    iframe.remove();
+                });
+
+                iframe.sandbox.add('allow-scripts', 'allow-same-origin', 'allow-popups', 'allow-forms');
+                document.body.append(backdrop, iframe);
+
+                const page = document.createElement('html')
+                page.innerHTML = data
+
+                iframe.contentWindow.document.open()
+                iframe.contentWindow.document.write(page.outerHTML)
+                iframe.contentWindow.document.close()
+            }
+        });
+    }
+</script>
+    <script>
+        function ChangeLocaleComponent() {
+            return {
+                showMenu: false,
+                closeMenu() {
+                    this.showMenu = false;
+                },
+                toggleMenu() {
+                    this.showMenu = !this.showMenu;
+                }
+            };
+        }
+    </script>
+    <script>
+        function HeaderComponent() {
+            return {
+                showNav: false,
+                toggleNav() {
+                    this.showNav = !this.showNav;
+                }
+            };
+        }
+    </script>
+</body>
+</html>
