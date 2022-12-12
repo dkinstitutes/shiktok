@@ -1,0 +1,362 @@
+
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shiktok Downloader - Download Tiktok videos without watermark</title>
+    <meta name="description"
+          content="TikTok Video Downloader Without watermark! Now you can download TikTok Videos without any restriction. Just paste your TikTok Video Url and download the video.">
+    <meta name="keywords"
+          content="TikTok, TikTok Downloader, TikTok Video Downloader, Download TikTok Videos, Online TikTok Video Downloader, Download TikTok Videos Without Watermark">
+    <meta property="og:description" content="TikTok Video Downloader Without watermark! Now you can download TikTok Videos without any restriction. Just paste your TikTok Video Url and download the video.">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;600;700;900&display=swap"
+          as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="theme-assets/css/app.css?v=b2c7e22022321a2305f55bae3d6e6426">
+    
+    <script defer src="https://unpkg.com/@alpinejs/collapse@3.10.3/dist/cdn.min.js"
+            integrity="sha384-gE382HiLf7oZIQO4e8O4ursZqf9JAjQQgNCRsUyUKfWBMXOiEFm89KxNkJjycgEq"
+            crossorigin="anonymous"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"
+            integrity="sha384-WJjkwfwjSA9R8jBkDaVBHc+idGbOa+2W4uq2SOwLCHXyNktpMVINGAD2fCYbUZn6"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/toastedjs@0.0.2/dist/toasted.min.css">
+    <!-- pull the js file -->
+    <script defer src="https://unpkg.com/toastedjs@0.0.2/dist/toasted.min.js"
+            integrity="sha384-/MVO8JFl9R2K32DQkRu+OOg3layD72sHHL9HBuMtiu2XCGeIYRL+WI3YizSdB3PF"
+            crossorigin="anonymous"></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function () {
+            window.toasted = new window.Toasted({
+                theme: 'bootstrap',
+                position: 'top-center',
+                duration: 5000,
+            })
+        });
+    </script>
+    </head>
+<body>
+<header x-data="HeaderComponent()" class="header" aria-label="Main Header">
+    <div class="logo">
+        <a href="https://tiktok.codespikex.com/en" aria-label="TikTok Downloader">
+            <img src="theme-assets/images/logo.svg?v=b2c7e22022321a2305f55bae3d6e6426" alt="TikTok Downloader" aria-hidden="true" height="40" width="150"/>
+        </a>
+    </div>
+    <!-- <nav aria-label="Main Navigation" :class="{'is-open': showNav}">
+        <ul>
+            <li>
+    <a href="" class="">link1</a>
+</li>
+            <li>
+    <a href="" class="">Link 2</a>
+</li>
+        </ul>
+    </nav> -->
+</header>
+
+<section class="splash" aria-label="Download TikTok Video Section" x-data="SplashComponent()"
+         @search-video.window="searchVideo($event)">
+    <div class="container">
+        <div class="splash-form" x-show="!tiktokVideo">
+            <h1>Shiktok - Download tiktok videos without watermark</h1>
+            <form @submit.prevent="submitForm()" x-ref="form" method="POST" action="https://tiktok.codespikex.com/fetch">
+                <div class="splash-search pi">
+                    <input type="hidden" name="_token" value="qS82jBZT0Qn6nWFR7O8UKdFzeA0kdWx0R1UtlTHG">                    <input x-model="url" name="url" type="url" placeholder="Insert tiktok video link here..."
+                           aria-label="Search Tiktok Video" class="splash-search-input pi-end" required>
+                    <button type="button" @click.prevent="pasteText()" x-show="canPaste"
+                            class="splash-paste-button mi-end" aria-label="Paste">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon mi-end" aria-hidden="true">
+    <path fill-rule="evenodd" d="M10.5 3A1.501 1.501 0 009 4.5h6A1.5 1.5 0 0013.5 3h-3zm-2.693.178A3 3 0 0110.5 1.5h3a3 3 0 012.694 1.678c.497.042.992.092 1.486.15 1.497.173 2.57 1.46 2.57 2.929V19.5a3 3 0 01-3 3H6.75a3 3 0 01-3-3V6.257c0-1.47 1.073-2.756 2.57-2.93.493-.057.989-.107 1.487-.15z" clip-rule="evenodd" />
+</svg>
+                        <span aria-hidden="true">Paste</span>
+                    </button>
+                    <button :disabled="processing" type="submit" class="splash-search-button">
+                        <span x-show="!processing">Download</span>
+                        <svg x-show="processing" class="icon" x-cloak="true" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2">
+        <path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3"
+              d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z">
+            <animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/>
+        </path>
+        <path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12">
+            <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/>
+            <animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate"
+                              values="0 12 12;360 12 12"/>
+        </path>
+    </g>
+</svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+                <template x-if="tiktokVideo">
+            <div class="splash-video-wrapper">
+                <div
+                    class="splash-video"
+                    :style="{'--bg-image': `url(${tiktokVideo?.coverURL})`}"
+                >
+                    <img :src="tiktokVideo?.author.avatar" :alt="tiktokVideo?.author.username"/>
+                    <h2 x-text="tiktokVideo?.author.username"></h2>
+                    <p x-text="tiktokVideo?.caption"></p>
+                    <a x-show="tiktokVideo?.watermark?.url" :href="tiktokVideo?.watermark?.url" target="_blank"
+                       referrerpolicy="no-referrer" data-extension="mp4" :data-size="tiktokVideo?.watermark?.size"
+                       @click.prevent="downloadVideo($event)">Original Video with Watermark</a>
+
+                    <template x-for="dld in tiktokVideo?.downloadUrls" :key="dld.idx">
+                        <a :href="dld.url" target="_blank" referrerpolicy="no-referrer" :data-size="dld.size"
+                           data-extension="mp4" @click.prevent="downloadVideo($event)">
+                            <span x-text="downloadText(dld) + downloadSize(dld)"></span>
+                        </a>
+                    </template>
+
+                    <a x-show="tiktokVideo?.mp3URL" :href="tiktokVideo?.mp3URL" target="_blank"
+                       referrerpolicy="no-referrer" data-extension="mp3"
+                       @click.prevent="downloadVideo($event)">Download MP3 Audio</a>
+                </div>
+                <button class="reset-video" @click="resetVideo()">Download another video</button>
+            </div>
+        </template>
+    </div>
+</section>
+
+    <section class="features-section" aria-label="Feature Section">
+    <div class="container">
+        <h2>Download TikTok videos with ease</h2>
+        <div class="card">
+            <img src="theme-assets/images/feature-download.min.webp?v=b2c7e22022321a2305f55bae3d6e6426" alt="Unlimited downloads" height="125px"
+                 width="200px" loading="lazy"/>
+            <h3>Unlimited downloads</h3>
+            <p>Save as many videos as you need, no limits or any other restrictions.</p>
+        </div>
+        <div class="card">
+            <img src="theme-assets/images/feature-vip.min.webp?v=b2c7e22022321a2305f55bae3d6e6426" alt="No Watermark!" height="125px"
+                 width="200px"
+                 loading="lazy"/>
+            <h3>No TikTok Watermark!</h3>
+            <p>Download TikTok videos without watermark, it removes the TikTok logo.</p>
+        </div>
+        <div class="card">
+            <img src="theme-assets/images/feature-mp3.min.webp?v=b2c7e22022321a2305f55bae3d6e6426" alt="MP4 and MP3 supported" height="125px"
+                 width="200px" loading="lazy"/>
+            <h3>MP4 and MP3 supported</h3>
+            <p>Save videos in hd quality, MP4 file format or convert to audio MP3.</p>
+        </div>
+    </div>
+</section>
+    <section class="how-to-section" aria-label="How to Section">
+    <div class="container">
+        <h2>Download TikTok video without watermark</h2>
+        <p>shiktok.com is a free tool helping you to download TikTok videos (formerly Musically) without watermarks online. Save TikTok video with the best quality in an MP4 file format with HD resolution. To find out how to use the TikTok video downloader, follow the instructions below. It’s simple process - you can download TikTok without watermark video in just three easy steps.        </p>
+
+        <div class="how-to-card">
+            <h3>How to download TikTok without watermark?</h3>
+            <ol>
+                <li class="inset-i-start">
+                    <b>Find a TikTok</b>
+                    <span>play a video that you want to save to your mobile device, using the TikTok app</span>
+                </li>
+                <li class="inset-i-start">
+                    <b>Copy the link</b>
+                    <span>tap "Share" (the arrow button on top of a chosen video), and then tap "Copy link"</span>
+                </li>
+                <li class="inset-i-start">
+                    <b>Download</b>
+                    <span>go back to shiktok.com and paste the link in the text field on the page and tap on the "Download" button</span>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+    <section class="about-section" aria-label="About Section">
+    <div class="container">
+        
+        <p>shiktok is one of the most popular tools to save no-watermark TikTok videos. No need to install any apps to use our service, all you need is a browser and a valid link to paste in the input field on shiktok website and remove the watermark from TikTok video.</p>
+
+        <div class="service-cards">
+            <div class="service-card">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" >
+    <path fill-rule="evenodd" d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z" clip-rule="evenodd" />
+</svg>
+                </div>
+                <p>It's a perfect solution for post-editing and publishing videos.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" >
+    <path fill-rule="evenodd" d="M5.5 3A2.5 2.5 0 003 5.5v2.879a2.5 2.5 0 00.732 1.767l6.5 6.5a2.5 2.5 0 003.536 0l2.878-2.878a2.5 2.5 0 000-3.536l-6.5-6.5A2.5 2.5 0 008.38 3H5.5zM6 7a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+</svg>
+                </div>
+                <p>It is free. You can save as many mp4 files as you want.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"  >
+    <path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z" />
+</svg>
+                </div>
+                <p>Registration is not required. Just open our website and paste the link.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"  >
+    <path d="M11.983 1.907a.75.75 0 00-1.292-.657l-8.5 9.5A.75.75 0 002.75 12h6.572l-1.305 6.093a.75.75 0 001.292.657l8.5-9.5A.75.75 0 0017.25 8h-6.572l1.305-6.093z" />
+</svg>
+                </div>
+                <p>Download TikTok videos without watermark at high speed.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"  >
+    <path fill-rule="evenodd" d="M17.721 1.599a.75.75 0 01.279.584v11.29a2.25 2.25 0 01-1.774 2.198l-2.041.442a2.216 2.216 0 01-.938-4.333l2.662-.576a.75.75 0 00.591-.734V6.112l-8 1.73v7.684a2.25 2.25 0 01-1.774 2.2l-2.042.44a2.216 2.216 0 11-.935-4.33l2.659-.574A.75.75 0 007 12.53V4.237a.75.75 0 01.591-.733l9.5-2.054a.75.75 0 01.63.149z" clip-rule="evenodd" />
+</svg>
+                </div>
+                <p>Save TikTok without watermark in mp4 or mp3 online.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"  >
+    <path fill-rule="evenodd" d="M2 4.25A2.25 2.25 0 014.25 2h11.5A2.25 2.25 0 0118 4.25v8.5A2.25 2.25 0 0115.75 15h-3.105a3.501 3.501 0 001.1 1.677A.75.75 0 0113.26 18H6.74a.75.75 0 01-.484-1.323A3.501 3.501 0 007.355 15H4.25A2.25 2.25 0 012 12.75v-8.5zm1.5 0a.75.75 0 01.75-.75h11.5a.75.75 0 01.75.75v7.5a.75.75 0 01-.75.75H4.25a.75.75 0 01-.75-.75v-7.5z" clip-rule="evenodd" />
+</svg>
+                </div>
+                <p>TikTok download works in every browser and operating system.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="usage-section" aria-label="Usage Section">
+    <div class="container">
+        
+        <div class="usage-list">
+            <div class="usage">
+                <div class="usage-content">
+                    <h3>How to download TikTok video on PC</h3>
+                    <p>This method is universal and convenient. A file will be saved without any trademark in the highest quality. It works perfectly on Windows, Mac OS, and Linux. PC users are not required to install any additional apps to save TikTok videos, and this is another plus when using this method.</p>
+                    <p>In order to use the shiktok app on PC, laptop (Windows 7, 10), Mac, or a laptop you will need to copy a link from the website.</p>
+                    <p>Next, go back to shiktok tool and paste the link in the text field on the main page. After that, you need to click on the "Download" button to get the link.</p>
+                </div>
+                <figure class="usage-image">
+                    <img src="theme-assets/images/usage-pc.min.png?v=b2c7e22022321a2305f55bae3d6e6426" alt="TikTok downloader on PC" width="1080"
+                         height="1080"/>
+                </figure>
+            </div>
+            <div class="usage">
+                <div class="usage-content">
+                    <h3>How to download TikTok video on iPhone or iPad (iOS)</h3>
+                    <p>If you are an iPhone or iPad owner, you need to install the Documents by Readdle app from the App Store.</p>
+                    <p>Due to Apple security policy, iOS users starting with the 12th version can't save TikTok videos directly from the browser. Copy the link of any TikTok file via the app, and launch the Documents by Readdle.</p>
+                    <p>In the bottom right corner of the screen, you will see a web browser icon. Tap it.</p>
+                    <p>When the browser is open, go to shiktok.com and paste the link in the text field. Choose the option you like and press the button again. The video will be saved to your device.</p>
+                </div>
+                <figure class="usage-image">
+                    <img src="theme-assets/images/usage-ios.min.png?v=b2c7e22022321a2305f55bae3d6e6426" alt="TikTok downloader on iOS" width="1080"
+                         height="1080"/>
+                </figure>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+    <section class="faq-section" aria-label="FAQ Section">
+    <div class="container">
+                
+        <div class="accordion" x-data="AccordionComponent()">
+    <button class="accordion-toggle" @click="toggleShow()" :class="{'is-open': show}">
+        <h4>Do I have to pay to download TikTok video?</h4>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon" aria-hidden="true" >
+    <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" />
+</svg>
+    </button>
+    <div class="accordion-content" x-collapse x-cloak x-show="show">
+        <p>No, you don't have to pay for anything, because our service is always free! We support all modern browsers such as Google Chrome, Mozilla Firefox, Safari, Microsoft Edge etc.</p>
+    </div>
+</div>
+
+        <div class="accordion" x-data="AccordionComponent()">
+    <button class="accordion-toggle" @click="toggleShow()" :class="{'is-open': show}">
+        <h4>Do I need to install extensions to use shiktok?</h4>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon" aria-hidden="true" >
+    <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" />
+</svg>
+    </button>
+    <div class="accordion-content" x-collapse x-cloak x-show="show">
+        <p>No. To save and remove the watermark from TikTok online, you just need a link. Paste it into the input field and select the appropriate format for conversion. Our TikTok watermark remover will do the rest.</p>
+    </div>
+</div>
+
+        <div class="accordion" x-data="AccordionComponent()">
+    <button class="accordion-toggle" @click="toggleShow()" :class="{'is-open': show}">
+        <h4>Where are TikTok videos saved after downloading?</h4>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon" aria-hidden="true" >
+    <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" />
+</svg>
+    </button>
+    <div class="accordion-content" x-collapse x-cloak x-show="show">
+        <p>When you save from TikTok without trademark, files are usually saved to your default location. In your browser settings, you can change and manually select the destination folder for your downloaded TikTok videos.</p>
+    </div>
+</div>
+
+        <div class="accordion" x-data="AccordionComponent()">
+    <button class="accordion-toggle" @click="toggleShow()" :class="{'is-open': show}">
+        <h4>Do I need to have a TikTok account to download TikTok videos?</h4>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon" aria-hidden="true" >
+    <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" />
+</svg>
+    </button>
+    <div class="accordion-content" x-collapse x-cloak x-show="show">
+        <p>No, you do not need to have a TikTok account. You can launch TikTok video download when you have a link to it, just paste it into the input field at the top of the page and click Download. Our TikTok download service will remove the watermark from TikTok and the video will be ready to use in a few seconds.</p>
+    </div>
+</div>
+
+        <div class="accordion" x-data="AccordionComponent()">
+    <button class="accordion-toggle" @click="toggleShow()" :class="{'is-open': show}">
+        <h4>Can your shiktok app save videos from personal accounts?</h4>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon" aria-hidden="true" >
+    <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" />
+</svg>
+    </button>
+    <div class="accordion-content" x-collapse x-cloak x-show="show">
+        <p>Our TikTok video saver cannot access the content of private accounts and cannot save videos from there. You must make sure the account is public in order for us to save videos for you.</p>
+    </div>
+</div>
+
+        <div class="accordion" x-data="AccordionComponent()">
+    <button class="accordion-toggle" @click="toggleShow()" :class="{'is-open': show}">
+        <h4>How to get link for TikTok videos?</h4>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon" aria-hidden="true" >
+    <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" />
+</svg>
+    </button>
+    <div class="accordion-content" x-collapse x-cloak x-show="show">
+        <p>Open the TikTok app and Choose the video you want to save. Click "Share" and then "Copy Link". Your TikTok video download without watermark URL is ready on your clipboard.</p>
+    </div>
+</div>
+
+    </div>
+</section>
+<footer class="footer">
+    <nav class="footer-nav" aria-label="Footer Navigation">
+        <a href="">Terms of Service</a>
+        <a href="">Privacy Policy</a>
+        <a href="">About us</a>
+        <a href="">Contact Developer</a>
+    </nav>
+    <noindex>
+        <b>shiktok app is in no way affiliated with, authorized, maintained, sponsored or endorsed by TikTok or any of its affiliates or subsidiaries.</b>
+    </noindex>
+    <p>Copyright © 2022</p>
+</footer>
+    <script src="theme-assets/js/script.js"></script>
+</body>
+</html>
